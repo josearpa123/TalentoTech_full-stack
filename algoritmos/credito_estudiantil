@@ -1,0 +1,55 @@
+class materia{
+    private double nota
+    private int creditos
+
+    public materia(double not, int credi){
+        nota = not
+        creditos = credi
+    }
+    public double getnota{
+        return nota
+    }
+
+    public int getcreditos{
+        return creditos
+    }
+}
+
+class estudiante{
+    public string nombre
+    public string semestre
+    private list materias
+    public estudiante(string nom, string semes, list materia){
+        nombre= nom
+        semestre = semes
+        materias = materia
+    }
+    public void agregarmateria(){
+        materias.add(materia)
+    }
+    public double calcularpromedio(){
+        double sumaPonderada=0
+        int sumacreditos=0
+        for (Materia materia : materias) {
+            sumaPonderada += materia.getnota() * materia.getcreditos();
+            sumaCreditos += materia.getcreditos();
+        }
+        if (sumaCreditos > 0) {
+            return sumaPonderada / sumaCreditos;
+        } else {
+            return 0;
+        }
+        
+    }
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getSemestre() {
+        return semestre;
+    }
+
+    public List<Materia> getMaterias() {
+        return materias;
+    }
+}

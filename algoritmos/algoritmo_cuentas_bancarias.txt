@@ -1,0 +1,54 @@
+Clase Cuenta_bancaria
+   public int numero
+   public string clave
+   public string dueño
+   private float saldo
+   public Cuenta_bancaria (int Num, String clav, String dueño, float saldo)
+        numero = Num
+        clave = clav
+        dueño = dueño
+        saldo = saldo
+    fin_cuenta_bancaria
+
+MOD_ACCESO TIPO_RETORNO consignar()
+    Acciones 
+    pedir_numeroconsigna = entrada_taclado("numero de la cuenta a consignar")
+    if(pedir_numeroconsigna == true){
+        valor_consigna = entrada_taclado("valor consigna")
+           enviar_dinero = valor_consigna 
+           escriba: valor_consigna
+     }else
+     escriba: numero no existe
+FIN_consignar
+
+MOD_ACCESO TIPO_RETORNO retirar()
+    Acciones 
+    saldor_retirar= entrada_taclado("Inserte datos")
+    if(saldor_retirar <= saldo){
+        print("retirar dinero "+ saldor_retirar)
+        else
+        print("saldo insuficiente")
+
+    }
+FIN_metodo2
+
+MOD_ACCESO TIPO_RETORNO cambiar_clave()
+Acciones 
+   ingresar_clave = entrada_taclado("Inserta clave actual")
+   ingresar_clave_nueva = entrada_taclado("ingresar clave nueva")
+   clave = ingresar_clave_nueva
+FIN_metodo1
+
+MOD_ACCESO TIPO_RETORNO consultar_saldo()
+Acciones 
+print("Su saldo es: " + saldo)
+FIN_metodo2
+
+MAIN(){
+    Cuenta_bancaria cuenta1, cuenta2
+    cuenta1 = Cuenta_bancaria(1,2508,"Jose Arias", 0)
+    cuenta2 = Cuenta_bancaria(2, 2608, "Alejandra", 200)
+    cuenta1.consignar = 100000 
+    cuenta2.cambiar_clave =  2507
+    cuenta2.consultar_saldo
+}
