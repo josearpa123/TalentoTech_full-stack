@@ -1,23 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de salud</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <div class="container">  
-    <header>
-        <h1>Sistema de salud</h1>
-        <p>Sistema de atencion medica en la ciudad de cali</p>
-    </header>
-    <div class="btn-group-opciones" role="group" aria-label="Vertical button group">
-        <button type="button" class="btn btn-primary">Registro de disponibilidad</button>
-        <button type="button" class="btn btn-primary">Registro de citas</button>
-        <button type="button" class="btn btn-primary">Registro de cumplimiento e historias clinica resumida</button>
-      </div>
+    <div class="container">
+        <header>
+            <h1>Sistema de salud</h1>
+            <p>Sistema de atencion medica en la ciudad de cali</p>
+        </header>
+        <div class="btn-group-opciones" role="group" aria-label="Vertical button group">
+            <button type="button" class="btn btn-primary">Registro de disponibilidad</button>
+            <button type="button" class="btn btn-primary">Registro de citas</button>
+            <button type="button" class="btn btn-primary">Registro de cumplimiento e historias clinica resumida</button>
+        </div>
     </div>
-    
+    <div id="disponibilidad" class="form-container">
+        <header>
+            <h2>Registrar disponibilidad en los proximos 30 dias</h2>
+        </header>
+        <form>
+            <p>Seleccionar los dias que estes disponible: </p>
+            <div id="dateOptions"></div>
+            <button type="submit">Registrar Disponibilidad</button>
+        </form>
+    </div>
+    <div id="solicitud" class="form-container">
+        <header>
+            <h2>Registro de citas</h2>
+        </header>
+        <form id="appointmentForm">
+            <p>Informacion del usuario</p>
+
+            <label for="Nombre">Nombre completo: </label>
+            <input type="text"  id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required>
+
+            <label for="cedula">Cedula: </label>
+            <input type="text" id="cedula" name="cedula" placeholder="Escribe tu numero de cedula" required>
+
+            <label for="telefono">Telefono: </label>
+            <input type="number" id="telefono" name="telefono" placeholder="Escribe tu numero de telefono" required>
+
+            <label for="motivo">Motivo: </label>
+            <textarea id="motivo" name="motivo" placeholder="Escribe el motivo de la cita" required></textarea>
+            <p>Tipo de Solicitud</p>
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" data-type="normal">Normal</button>
+                <button type="button" class="btn btn-primary" data-type="prioritaria">Prioritaria</button>
+                <button type="button" class="btn btn-primary" data-type="urgencia">Urgencia</button>
+            </div> 
+            <p>Selecciona un Día Disponible:</p>
+            <select id="availableDates" required>
+                <option value="" disabled selected>Elige un día</option>
+            </select>
+            <button type="submit" class="btn btn-success">Registrar Cita</button>
+        </form>
+    </div>
+    <div id="historial" class="form-container">
+        <header>
+            <h2>Registro de cumplimiento e historia clínica resumida</h2>
+            <p>Historia clinica</p>
+        </header>
+        <div id="historia-clinica"></div>
+        <!--Aqui se insertara la historia clinica de los pacientes en un script-->
+    </div>
+
 </body>
+
 </html>

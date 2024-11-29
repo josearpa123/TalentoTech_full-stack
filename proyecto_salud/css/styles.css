@@ -1,13 +1,13 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    height: 0;
+    height: 100vh; /* Ajustar a la altura completa de la ventana */
     background-color: #f9f9f9;
 }
 
-.container{
-    max-width: 600px;
-    margin: 50px;
+.container {
+    max-width: 800px; /* Aumenta el ancho del contenedor */
+    margin: 50px auto; /* Centra el contenedor en la pantalla */
     padding: 10px;
     border: 1px solid #000000;
     border-radius: 10px;
@@ -15,25 +15,26 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1{
+header h1 {
     font-size: 24px;
     margin-bottom: 10px;
     color: #333;
 }
 
-header p{
+header p {
     font-size: 16px;
     color: #666;
 }
 
-.btn-group-opciones{
+/* Modifica la visualización de los botones */
+.btn-group-opciones {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* Apila los botones en una columna */
+    gap: 10px; /* Espaciado entre botones */
     margin-top: 20px;
 }
 
-.btn{
+.btn {
     padding: 10px 15px;
     font-size: 16px;
     color: #fff;
@@ -45,6 +46,17 @@ header p{
     transition: background-color 0.3s ease;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #4573a5;
 }
+
+#disponibilidad {
+    margin-top: 30px;
+    /* Este contenedor se llenará con los formularios más tarde */
+}
+
+#solitud {
+    margin-top: 30px;
+    /* Este contenedor se llenará con los formularios más tarde */
+}
+

@@ -1,0 +1,65 @@
+button{
+    padding: auto;
+    width: 50px;
+    height: 30px;
+    align-items: center;
+    line-height: 200px; 
+}
+
+/* Estilo para la cajita */
+#cajita {
+    width: 200px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    display: flex;  /* Inicialmente oculta */
+    text-align: center;
+    margin: auto;
+}
+
+/* Estilo opcional para el texto dentro de la cajita */
+#cajita p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Estilo para cada botón con diferentes colores */
+#boton_color1 {
+    background-color: aqua;
+    color: white;
+}
+
+#boton_color2 {
+    background-color: purple;
+    color: white;
+}
+
+#boton_color3 {
+    background-color: orange;
+    color: white;
+}
+
+#boton_color4 {
+    background-color: yellow;
+    color: black;
+}
+
+#boton_color5 {
+    background-color: red;
+    color: white;
+}
+
+/* Estilo para la clase "mostrar", que hará visible la cajita */
+.mostrar {
+    display: block; /* Muestra la cajita */
+}
+
+/* Clase para ocultar el cuadro */
+.ocultar {
+    display: none;
+}
+
+body{
+    text-align: center;
+}
