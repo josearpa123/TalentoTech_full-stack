@@ -1,76 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de salud</title>
+    <title>Gestión de Citas Médicas</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <div class="container">
-        <header>
-            <h1>Sistema de salud</h1>
-            <p>Sistema de atencion medica en la ciudad de cali</p>
-        </header>
-        <div class="btn-group-opciones" role="group" aria-label="Vertical button group">
-            <button type="button" class="btn btn-primary">Registro de disponibilidad</button>
-            <button type="button" class="btn btn-primary">Registro de citas</button>
-            <button type="button" class="btn btn-primary">Registro de cumplimiento e historias clinica resumida</button>
-        </div>
-    </div>
-    <div id="disponibilidad" class="form-container">
-        <header>
-            <h2>Registrar disponibilidad en los proximos 30 dias</h2>
-        </header>
-        <form>
-            <p>Seleccionar los dias que estes disponible: </p>
-            <div id="dateOptions"></div>
-            <button type="submit">Registrar Disponibilidad</button>
-        </form>
-    </div>
-    <div id="solicitud" class="form-container">
-        <header>
-            <h2>Registro de citas</h2>
-        </header>
-        <form id="appointmentForm">
-            <p>Informacion del usuario</p>
+    <header>
+        <h1>Gestión de Citas Médicas</h1>
+    </header>
+    <main>
+        <!-- Sección para registrar disponibilidad -->
+        <section id="registro-disponibilidad">
+            <h2>Registro de Disponibilidad</h2>
+            <form id="form-disponibilidad">
+                <label for="medico">Nombre del Médico:</label>
+                <input type="text" id="medico" required>
+                <label for="fecha-disponible">Fecha Disponible:</label>
+                <input type="date" id="fecha-disponible" required>
+                <button type="submit">Registrar Disponibilidad</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Médico</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-disponibilidad"></tbody>
+            </table>
+        </section>
 
-            <label for="Nombre">Nombre completo: </label>
-            <input type="text"  id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required>
+        <!-- Sección para registrar citas -->
+        <section id="registro-citas">
+            <h2>Registro de Citas</h2>
+            <form id="form-citas">
+                <label for="paciente">Nombre del Paciente:</label>
+                <input type="text" id="paciente" required>
+                <label for="tipo-solicitud">Tipo de Solicitud:</label>
+                <select id="tipo-solicitud" required>
+                    <option value="normal">Normal</option>
+                    <option value="prioritaria">Prioritaria</option>
+                    <option value="urgencia">Urgencia</option>
+                </select>
+                <label for="medico-cita">Médico:</label>
+                <input type="text" id="medico-cita" required>
+                <label for="fecha-cita">Fecha de Cita:</label>
+                <input type="date" id="fecha-cita" required>
+                <button type="submit">Registrar Cita</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Médico</th>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-citas"></tbody>
+            </table>
+        </section>
 
-            <label for="cedula">Cedula: </label>
-            <input type="text" id="cedula" name="cedula" placeholder="Escribe tu numero de cedula" required>
-
-            <label for="telefono">Telefono: </label>
-            <input type="number" id="telefono" name="telefono" placeholder="Escribe tu numero de telefono" required>
-
-            <label for="motivo">Motivo: </label>
-            <textarea id="motivo" name="motivo" placeholder="Escribe el motivo de la cita" required></textarea>
-            <p>Tipo de Solicitud</p>
-
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary" data-type="normal">Normal</button>
-                <button type="button" class="btn btn-primary" data-type="prioritaria">Prioritaria</button>
-                <button type="button" class="btn btn-primary" data-type="urgencia">Urgencia</button>
-            </div> 
-            <p>Selecciona un Día Disponible:</p>
-            <select id="availableDates" required>
-                <option value="" disabled selected>Elige un día</option>
-            </select>
-            <button type="submit" class="btn btn-success">Registrar Cita</button>
-        </form>
-    </div>
-    <div id="historial" class="form-container">
-        <header>
-            <h2>Registro de cumplimiento e historia clínica resumida</h2>
-            <p>Historia clinica</p>
-        </header>
-        <div id="historia-clinica"></div>
-        <!--Aqui se insertara la historia clinica de los pacientes en un script-->
-    </div>
-
+        <!-- Sección para registrar cumplimiento e historia clínica -->
+        <section id="registro-historia">
+            <h2>Registro de Historia Clínica</h2>
+            <form id="form-historia">
+                <label for="paciente-historia">Nombre del Paciente:</label>
+                <input type="text" id="paciente-historia" required>
+                <label for="motivo">Motivo:</label>
+                <textarea id="motivo" required></textarea>
+                <label for="tratamiento">Tratamiento:</label>
+                <textarea id="tratamiento" required></textarea>
+                <button type="submit">Registrar Historia</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Motivo</th>
+                        <th>Tratamiento</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-historia"></tbody>
+            </table>
+        </section>
+    </main>
+    <script src="/proyecto_salud/js/script.js"></script>
 </body>
-
 </html>
