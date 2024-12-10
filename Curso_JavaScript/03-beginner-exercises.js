@@ -5,7 +5,7 @@
 //2. Escribe un comentario en varias lineas
 
 /**
- * Hello my name is Jose Arias, 
+ * Hello my name is Jose Arias,
  * I'm from cali colombia 
  * I live in cali and studying engeniering system
  */
@@ -83,6 +83,13 @@ console.log(
  
 
 //8.Declara constantes con valoreas asociados a todos los tipos de datos primitivos
+
+const nam2 = "Jose Arias"
+const age2 = 20
+const isStudent2 = true
+const saldo2 = null
+const clave2 = Symbol("jdap")
+const BigIntvalue2= BigInt(12398248930)
 
 //9. A continuacion, modifica los valores de las contantes
 
